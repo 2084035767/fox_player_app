@@ -3,9 +3,8 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:dio_smart_retry/dio_smart_retry.dart';
-import 'package:free_play_app/core/app_config.dart';
+import 'package:fox_player/core/app_config.dart';
 import 'package:injectable/injectable.dart';
-import 'package:pretty_dio_logger/pretty_dio_logger.dart'; // 推荐的日志拦截器
 
 @module
 abstract class NetworkModule {
@@ -45,17 +44,17 @@ abstract class NetworkModule {
       ),
     );
     // 日志拦截器
-    dio.interceptors.add(
-      PrettyDioLogger(
-        requestHeader: true,
-        requestBody: true,
-        responseBody: true,
-        responseHeader: false,
-        error: true,
-        compact: true,
-        maxWidth: 90,
-      ),
-    );
+    // dio.interceptors.add(
+    //   PrettyDioLogger(
+    //     requestHeader: true,
+    //     requestBody: true,
+    //     responseBody: true,
+    //     responseHeader: false,
+    //     error: true,
+    //     compact: true,
+    //     maxWidth: 90,
+    //   ),
+    // );
 
     // 业务拦截器
     dio.interceptors.add(

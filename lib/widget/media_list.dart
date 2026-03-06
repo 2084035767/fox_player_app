@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:free_play_app/widget/media_card.dart';
+import 'package:fox_player/widget/media_card.dart';
 
 /// 视频列表组件
 class MediaList extends StatelessWidget {

@@ -1,1 +1,1 @@
-const String appName = "Free Play";
+const String appName = "Fox Play";

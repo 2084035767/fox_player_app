@@ -1,0 +1,16 @@
+flutter_native_splash:
+  # 通用配置（Android 12 以下 + iOS）
+  color: '#FFFFFF' # 白色背景
+  image: assets/image/logo_12.jpg
+  fullscreen: true
+  android_gravity: center
+
+  android_12:
+    color: '#FFFFFF' # 背景色
+    image: assets/image/logo_12.jpg
+    icon_background_color: '#FFFFFF'
+
+  # 🔹 平台开关（按需开启）
+  android: true
+  ios: false
+  web: false # 如果不做 Web 就关掉

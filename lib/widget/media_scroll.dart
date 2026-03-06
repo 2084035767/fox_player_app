@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:free_play_app/widget/media_card.dart';
+import 'package:fox_player/widget/media_card.dart';
 
 /// 影视内容列表组件（横行）
 class MediaScroll extends StatelessWidget {

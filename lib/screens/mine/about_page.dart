@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:free_play_app/core/theme/app_theme.dart';
+import 'package:fox_player/core/theme/app_theme.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -7,7 +7,7 @@ class AboutPage extends StatelessWidget {
   const AboutPage({super.key});
 
   static const String _githubUrl =
-      'https://gitee.com/zs2084035767/free_player_app';
+      'https://gitee.com/zs2084035767/fox_player_app';
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class AboutPage extends StatelessWidget {
                     mainAxisAlignment: .center,
                     children: [
                       Text(
-                        'Free Player',
+                        'Fox Player',
                         style: Theme.of(context).textTheme.headlineLarge
                             ?.copyWith(color: AppThemes.primaryTextColor),
                       ),

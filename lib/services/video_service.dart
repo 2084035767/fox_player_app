@@ -1,6 +1,6 @@
-import 'package:free_play_app/core/network/dio_provider.dart';
-import 'package:free_play_app/core/utils/logger.dart';
-import 'package:free_play_app/models/video.dart';
+import 'package:fox_player/core/network/dio_provider.dart';
+import 'package:fox_player/core/utils/logger.dart';
+import 'package:fox_player/models/video.dart';
 import 'package:injectable/injectable.dart';
 
 @lazySingleton

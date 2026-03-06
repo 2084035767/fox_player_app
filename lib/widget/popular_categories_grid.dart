@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:free_play_app/core/theme/app_theme.dart';
+import 'package:fox_player/core/theme/app_theme.dart';
 
 /// 热播类型宫格组件
 class PopularCategoriesGrid extends StatelessWidget {

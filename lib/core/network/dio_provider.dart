@@ -3,7 +3,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:free_play_app/core/error/api_exception.dart';
+import 'package:fox_player/core/error/api_exception.dart';
 import 'package:injectable/injectable.dart';
 
 @singleton

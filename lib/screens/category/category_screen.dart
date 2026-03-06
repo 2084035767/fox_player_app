@@ -1,13 +1,13 @@
 import 'package:easy_refresh/easy_refresh.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:free_play_app/core/router/router_manager.dart';
-import 'package:free_play_app/di/service_locator.dart';
-import 'package:free_play_app/services/video_service.dart';
-import 'package:free_play_app/widget/error_page.dart';
-import 'package:free_play_app/widget/loading_indicator.dart';
-import 'package:free_play_app/widget/media_card.dart';
-import 'package:free_play_app/widget/media_page.dart';
+import 'package:fox_player/core/router/router_manager.dart';
+import 'package:fox_player/di/service_locator.dart';
+import 'package:fox_player/services/video_service.dart';
+import 'package:fox_player/widget/error_page.dart';
+import 'package:fox_player/widget/loading_indicator.dart';
+import 'package:fox_player/widget/media_card.dart';
+import 'package:fox_player/widget/media_page.dart';
 import 'package:signals_hooks/signals_hooks.dart';
 
 class CategoryScreen extends HookWidget {

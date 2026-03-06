@@ -1,4 +1,4 @@
-package com.zs.free_play_app
+package com.zs.fox_player
 
 import io.flutter.embedding.android.FlutterActivity
 

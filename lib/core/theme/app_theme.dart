@@ -100,6 +100,7 @@ class AppThemes {
   static ThemeData _buildLightTheme() {
     final base = ThemeData.light();
     return base.copyWith(
+     
       // primarySwatch: Colors.blueGrey,
       primaryColor: primaryGray,
       scaffoldBackgroundColor: backgroundColor,

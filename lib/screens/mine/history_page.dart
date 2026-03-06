@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:free_play_app/widget/error_page.dart';
-import 'package:free_play_app/widget/media_card.dart';
+import 'package:fox_player/widget/error_page.dart';
+import 'package:fox_player/widget/media_card.dart';
 
 class HistoryPage extends HookWidget {
   static List<Media> historyVideos = [];

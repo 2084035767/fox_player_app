@@ -1,5 +1,5 @@
-import 'package:free_play_app/core/network/dio_provider.dart';
-import 'package:free_play_app/models/user.dart';
+import 'package:fox_player/core/network/dio_provider.dart';
+import 'package:fox_player/models/user.dart';
 import 'package:injectable/injectable.dart';
 
 @lazySingleton

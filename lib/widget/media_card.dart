@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:free_play_app/widget/loading_card.dart';
+import 'package:fox_player/widget/loading_card.dart';
 
 /// 影视数据模型
 class Media {

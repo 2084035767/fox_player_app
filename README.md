@@ -1,7 +1,7 @@
-# Free Play App - 项目架构说明
+# Fox Player - 项目架构说明
 
 ## 项目概述
-Free Play App 是一个使用 Flutter 开发的视频流媒体应用，采用 signals_flutter 状态管理方案和 get_it 依赖注入，结合适合中小型项目的目录结构。信号被封装在 ViewModels 中进行管理。
+Fox Player 是一个使用 Flutter 开发的视频流媒体应用，采用 signals_flutter 状态管理方案和 get_it 依赖注入，结合适合中小型项目的目录结构。信号被封装在 ViewModels 中进行管理。
 
 ## 当前目录结构
 ```

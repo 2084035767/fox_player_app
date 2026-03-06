@@ -1,9 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:free_play_app/core/app_config.dart';
-import 'package:free_play_app/core/router/router_manager.dart';
-import 'package:free_play_app/di/service_locator.dart';
+import 'package:fox_player/core/app_config.dart';
+import 'package:fox_player/core/router/router_manager.dart';
+import 'package:fox_player/core/utils/logger.dart';
+import 'package:fox_player/di/service_locator.dart';
+import 'package:fox_player/services/device_user_manager.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:signals_hooks/signals_hooks.dart';
 
@@ -13,6 +15,8 @@ class ProfileScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final appConfig = useMemoized(() => getIt<AppConfig>());
+    final user = DeviceUserManager.instance.currentUser;
+    Logging.error(user.toString());
     final mode = useExistingSignal(appConfig.themeMode);
     return Scaffold(
       appBar: AppBar(
@@ -49,8 +53,8 @@ class ProfileScreen extends HookWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
-                          '小橙子',
+                        Text(
+                          '${user?.username}',
                           style: TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.bold,
@@ -58,7 +62,7 @@ class ProfileScreen extends HookWidget {
                         ),
                         const SizedBox(height: 5),
                         Text(
-                          '用户ID: 123456',
+                          '用户ID: ${user?.userId}',
                           style: TextStyle(
                             fontSize: 16,
                             color: Colors.grey[600],

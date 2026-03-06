@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:free_play_app/di/service_locator.dart';
-import 'package:free_play_app/viewmodels/auth_view_model.dart';
+import 'package:fox_player/di/service_locator.dart';
+import 'package:fox_player/viewmodels/auth_view_model.dart';
 import 'package:go_router/go_router.dart';
 import 'package:signals_hooks/signals_hooks.dart';
 
@@ -10,7 +10,7 @@ class LoginScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final vm = getIt<AuthViewModel>();
+    getIt<AuthViewModel>();
     final email = useSignal('');
     final password = useSignal('');
 
@@ -23,7 +23,7 @@ class LoginScreen extends HookWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Free Play',
+              'Fox Player',
               style: TextStyle(fontSize: 40, color: Colors.blue),
             ),
             Padding(
@@ -50,20 +50,13 @@ class LoginScreen extends HookWidget {
             ),
 
             const SizedBox(height: 20),
-            Watch.builder(
-              builder: (context) => vm.user.value.map(
-                data: (user) => ElevatedButton(
-                  onPressed: () async {
-                    await vm.login(email.value, password.value);
-                    if (context.mounted) {
-                      context.go('/home');
-                    }
-                  },
-                  child: const Text('Login'),
-                ),
-                error: (error) => Text('Error: ${error.toString()}'),
-                loading: () => const CircularProgressIndicator(),
-              ),
+            ElevatedButton(
+              onPressed: () async {
+                if (context.mounted) {
+                  context.go('/home');
+                }
+              },
+              child: const Text('Login'),
             ),
           ],
         ),

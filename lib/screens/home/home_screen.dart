@@ -2,16 +2,16 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_carousel_widget/flutter_carousel_widget.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:free_play_app/core/router/router_manager.dart';
-import 'package:free_play_app/di/service_locator.dart';
-import 'package:free_play_app/screens/category/category_screen.dart';
-import 'package:free_play_app/screens/explore/explore_screen.dart';
-import 'package:free_play_app/screens/mine/profile_screen.dart';
-import 'package:free_play_app/services/video_service.dart';
-import 'package:free_play_app/widget/error_text.dart';
-import 'package:free_play_app/widget/loading_indicator.dart';
-import 'package:free_play_app/widget/media_card.dart';
-import 'package:free_play_app/widget/media_grid.dart';
+import 'package:fox_player/core/router/router_manager.dart';
+import 'package:fox_player/di/service_locator.dart';
+import 'package:fox_player/screens/category/category_screen.dart';
+import 'package:fox_player/screens/explore/explore_screen.dart';
+import 'package:fox_player/screens/mine/profile_screen.dart';
+import 'package:fox_player/services/video_service.dart';
+import 'package:fox_player/widget/error_text.dart';
+import 'package:fox_player/widget/loading_indicator.dart';
+import 'package:fox_player/widget/media_card.dart';
+import 'package:fox_player/widget/media_grid.dart';
 import 'package:signals_hooks/signals_hooks.dart';
 
 class HomeScreen extends HookWidget {

@@ -2,13 +2,13 @@ import 'package:better_player_plus/better_player_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:free_play_app/core/router/router_manager.dart';
-import 'package:free_play_app/core/utils/url_util.dart';
-import 'package:free_play_app/di/service_locator.dart';
-import 'package:free_play_app/services/video_service.dart';
-import 'package:free_play_app/widget/error_text.dart';
-import 'package:free_play_app/widget/expandable_text.dart';
-import 'package:free_play_app/widget/loading_indicator.dart';
+import 'package:fox_player/core/router/router_manager.dart';
+import 'package:fox_player/core/utils/url_util.dart';
+import 'package:fox_player/di/service_locator.dart';
+import 'package:fox_player/services/video_service.dart';
+import 'package:fox_player/widget/error_text.dart';
+import 'package:fox_player/widget/expandable_text.dart';
+import 'package:fox_player/widget/loading_indicator.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:signals_hooks/signals_hooks.dart';
 
@@ -24,6 +24,9 @@ class PlayerPage extends HookWidget {
     final detailId = useSignal<int>(id);
     final currentIndex = useSignal<int>(0);
     final playUrls = useSignal<List<String>>([]);
+    final isFavorite = useSignal<bool>(false); // 收藏状态信号
+    final isBookmarked = useSignal<bool>(false); // 书签状态信号
+    final isShared = useSignal<bool>(false); // 分享状态信号（虽然分享通常不需要切换状态，但按需求实现）
 
     final controller = useMemoized(
       () => BetterPlayerController(
@@ -168,16 +171,38 @@ class PlayerPage extends HookWidget {
                               ),
                             ),
                             ElevatedButton(
-                              onPressed: () {},
-                              child: Icon(Icons.favorite),
+                              onPressed: () {
+                                isFavorite.value = !isFavorite.value; // 切换收藏状态
+                              },
+                              child: Icon(
+                                isFavorite.value
+                                    ? Icons
+                                          .favorite // 实心图标（已收藏）
+                                    : Icons.favorite_border, // 空心图标（未收藏）
+                              ),
                             ),
                             ElevatedButton(
-                              onPressed: () {},
-                              child: Icon(Icons.bookmark),
+                              onPressed: () {
+                                isBookmarked.value =
+                                    !isBookmarked.value; // 切换书签状态
+                              },
+                              child: Icon(
+                                isBookmarked.value
+                                    ? Icons
+                                          .bookmark // 实心图标（已书签）
+                                    : Icons.bookmark_border, // 空心图标（未书签）
+                              ),
                             ),
                             ElevatedButton(
-                              onPressed: () {},
-                              child: Icon(Icons.share),
+                              onPressed: () {
+                                isShared.value = !isShared.value; // 切换分享状态
+                              },
+                              child: Icon(
+                                isShared.value
+                                    ? Icons
+                                          .share // 实心图标（已分享）
+                                    : Icons.share_outlined, // 空心图标（未分享）
+                              ),
                             ),
                           ],
                         ),

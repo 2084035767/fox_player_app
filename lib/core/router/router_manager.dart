@@ -1,23 +1,23 @@
 // lib/core/routing/router_manager.dart
 import 'package:flutter/material.dart';
-import 'package:free_play_app/screens/auth/login_screen.dart';
-import 'package:free_play_app/screens/category/category_screen.dart';
-import 'package:free_play_app/screens/category/custom_screen.dart';
-import 'package:free_play_app/screens/explore/explore_screen.dart';
-import 'package:free_play_app/screens/home/home_screen.dart';
-import 'package:free_play_app/screens/home/search_screen.dart';
-import 'package:free_play_app/screens/mine/about_page.dart';
-import 'package:free_play_app/screens/mine/downloads_page.dart';
-import 'package:free_play_app/screens/mine/favorites_page.dart';
-import 'package:free_play_app/screens/mine/help_feedback_page.dart';
-import 'package:free_play_app/screens/mine/history_page.dart';
-import 'package:free_play_app/screens/mine/privacy_policy_page.dart';
-import 'package:free_play_app/screens/mine/profile_screen.dart';
-import 'package:free_play_app/screens/mine/settings_page.dart';
-import 'package:free_play_app/screens/mine/watch_later_page.dart';
-import 'package:free_play_app/screens/play/player_screen.dart';
-import 'package:free_play_app/viewmodels/auth_view_model.dart';
-import 'package:get_it/get_it.dart';
+import 'package:fox_player/di/service_locator.dart';
+import 'package:fox_player/screens/auth/login_screen.dart';
+import 'package:fox_player/screens/category/category_screen.dart';
+import 'package:fox_player/screens/category/custom_screen.dart';
+import 'package:fox_player/screens/explore/explore_screen.dart';
+import 'package:fox_player/screens/home/home_screen.dart';
+import 'package:fox_player/screens/home/search_screen.dart';
+import 'package:fox_player/screens/mine/about_page.dart';
+import 'package:fox_player/screens/mine/downloads_page.dart';
+import 'package:fox_player/screens/mine/favorites_page.dart';
+import 'package:fox_player/screens/mine/help_feedback_page.dart';
+import 'package:fox_player/screens/mine/history_page.dart';
+import 'package:fox_player/screens/mine/privacy_policy_page.dart';
+import 'package:fox_player/screens/mine/profile_screen.dart';
+import 'package:fox_player/screens/mine/settings_page.dart';
+import 'package:fox_player/screens/mine/watch_later_page.dart';
+import 'package:fox_player/screens/play/player_screen.dart';
+import 'package:fox_player/viewmodels/auth_view_model.dart';
 import 'package:go_router/go_router.dart';
 import 'package:injectable/injectable.dart';
 import 'package:lottie/lottie.dart';
@@ -37,7 +37,7 @@ class RoutePaths {
   static const String favorites = '/favorites';
   static const String downloads = '/downloads';
   static const String watchLater = '/watch-later';
-  static const String history = '/history';  // 添加历史记录路由路径
+  static const String history = '/history'; // 添加历史记录路由路径
   static const String player = '/player/:id';
   static const String explore = '/explore';
   static const String privacy = '/privacy';
@@ -63,7 +63,7 @@ class RouteNames {
   static const String favorites = 'favorites';
   static const String downloads = 'downloads';
   static const String watchLater = 'watchLater';
-  static const String history = 'history';  // 添加历史记录路由名称
+  static const String history = 'history'; // 添加历史记录路由名称
 }
 
 @lazySingleton
@@ -182,8 +182,8 @@ class RouterManager {
       .toSet();
 
   String? _redirect(BuildContext context, GoRouterState state) {
-    final authVm = GetIt.instance<AuthViewModel>();
-    final isLoggedIn = authVm.user.value.value != null;
+    final authVm = getIt<AuthViewModel>();
+    final isLoggedIn = authVm.user.value != null;
     final isGoingToLogin = state.uri.path == RoutePaths.login;
 
     // 已登录但尝试访问登录页

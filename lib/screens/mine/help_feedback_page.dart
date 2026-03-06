@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:free_play_app/core/theme/app_theme.dart';
+import 'package:fox_player/core/theme/app_theme.dart';
 
 class HelpFeedbackPage extends StatelessWidget {
   const HelpFeedbackPage({super.key});
-
-  static const String _githubUrl =
-      'https://github.com/yourname/video_player_lab';
-  static const String _issuesUrl = '$_githubUrl/issues';
 
   @override
   Widget build(BuildContext context) {

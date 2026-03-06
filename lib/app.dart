@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:free_play_app/core/app_config.dart';
-import 'package:free_play_app/core/router/router_manager.dart';
-import 'package:free_play_app/di/service_locator.dart';
+import 'package:fox_player/core/app_config.dart';
+import 'package:fox_player/core/router/router_manager.dart';
+import 'package:fox_player/di/service_locator.dart';
 import 'package:signals_hooks/signals_hooks.dart';
 
 import 'core/theme/app_theme.dart';

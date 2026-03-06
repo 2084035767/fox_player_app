@@ -1,6 +1,6 @@
-import 'package:free_play_app/core/utils/logger.dart';
-import 'package:free_play_app/models/video.dart';
-import 'package:free_play_app/services/video_service.dart';
+import 'package:fox_player/core/utils/logger.dart';
+import 'package:fox_player/models/video.dart';
+import 'package:fox_player/services/video_service.dart';
 import 'package:injectable/injectable.dart';
 import 'package:signals_flutter/signals_flutter.dart';
 
